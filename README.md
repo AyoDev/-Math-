@@ -18,7 +18,7 @@ f(g(x))
 
 symbols
 
-+ - * / basic math operrators 
+\+ \- \* / basic math operrators 
 \` denotes a comment
 || absolute value
 < > greater than and less than
