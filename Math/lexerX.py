@@ -12,15 +12,16 @@ tokens = {
     'open-paren':'\(',
     'close-paren':'\)',
     'open-brace':'\{',
-    'close-brace':'\}'
+    'close-brace':'\}',
+    'newline':';',
+    'newline':'\n'
 }
 
 for i in range(len(tokens)):
     lexer.add([*tokens][i], tokens[[*tokens][i]])
 
 lexer.ignore('\s+')
-lexer.ignore('\;')
-lexer.ignore('\n')
+
 
 l = lexer.build()
 
