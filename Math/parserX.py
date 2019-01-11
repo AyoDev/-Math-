@@ -11,7 +11,8 @@ parser = rply.ParserGenerator(['num',
     'mul',
     'div',
     'open-paren',
-    'close-paren'
+    'close-paren',
+    'newline'
     #'open-braces',
     #'close-brace'
     ],
@@ -31,6 +32,10 @@ def expression_number(p):
 @parser.production('expression : open-paren expression close-paren')
 def expression_parens(p):
     return p[1]
+
+@parser.production('expression : expression newline')
+def line(p):
+    return p[0]
 
 @parser.production('expression : expression fac')
 def symbol(p):
